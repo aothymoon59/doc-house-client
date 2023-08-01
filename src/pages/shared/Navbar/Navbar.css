@@ -1,0 +1,18 @@
+.active {
+    font-weight: 500 !important;
+    letter-spacing: 0.025em !important;
+    color: #1d4ed8 !important;
+    background-color: transparent !important;
+}
+
+.default {
+    font-weight: 500 !important;
+    letter-spacing: 0.025em !important;
+    color: #000000 !important;
+    background-color: transparent !important;
+}
+
+.dropdown .dropdown-content {
+    position: absolute;
+    right: 0;
+}
