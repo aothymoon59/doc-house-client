@@ -41,27 +41,57 @@ const Navbar = () => {
                     Appointment
                 </NavLink>
             </li>
+            <li>
+                <NavLink
+                    to="/reviews"
+                    aria-label="Reviews"
+                    title="Reviews"
+                    className={({ isActive }) => (isActive ? "active" : "default")}
+                >
+                    Reviews
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to="/contact"
+                    aria-label="Contact Us"
+                    title="Contact Us"
+                    className={({ isActive }) => (isActive ? "active" : "default")}
+                >
+                    Contact Us
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to="/login"
+                    aria-label="login"
+                    title="login"
+                    className={({ isActive }) => (isActive ? "active" : "default")}
+                >
+                    Login
+                </NavLink>
+            </li>
         </>
     );
 
     return (
-        <div className="w-full fixed top-0 z-50">
+        <div className="w-full fixed top-0 z-50 bg-[#07332F] py-3">
             <Container>
                 <div className="navbar">
                     <div className="navbar-start">
                         <Link to="/">
-                            <img src={logo} alt="Logo" />
+                            <img className="w-[120px] md:w-[180px] xl:w-[233px]" src={logo} alt="Logo" />
                         </Link>
                     </div>
                     <div className="navbar-end">
                         <div
                             onClick={() => setOpen(!open)}
-                            className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
+                            className="text-3xl text-white absolute right-8 top-6 cursor-pointer md:hidden"
                         >
                             {open ? <SlClose /> : <BiMenuAltRight />}
                         </div>
                         <ul
-                            className={`md:flex gap-5 md:items-center absolute md:static md:z-auto z-[-1] right-10 w-fit bg-slate-500 rounded-xl p-5 md:p-0 md:w-auto md:bg-transparent ${open ? "top-20" : "top-[-490px]"}`}
+                            className={`flex flex-col md:flex-row gap-5 md:items-center absolute md:static md:z-auto z-[-1] right-10 w-fit bg-green-900 rounded-xl p-5 md:p-0 md:w-auto md:bg-transparent ${open ? "top-20" : "top-[-490px]"}`}
                         >
                             {navOptions}
                         </ul>
