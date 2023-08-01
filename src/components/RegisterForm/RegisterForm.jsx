@@ -175,7 +175,7 @@ const RegisterForm = () => {
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-[#F7A582] py-4 rounded-md text-white transition-all duration-200 ease-in-out"
+                        className="w-full common-btn"
                     >
                         {/* {loading ? (
                         <ImSpinner9 className="m-auto animate-spin" size={24} />

@@ -7,3 +7,19 @@
     color: #ffffff !important;
     border: 0;
 }
+
+.common-btn {
+    @apply font-bold text-xl border border-[#F7A582] bg-[#F7A582] rounded-md py-4 px-6 text-white transition-all duration-300 ease-in-out
+}
+
+.common-btn:hover {
+    @apply bg-transparent text-[#F7A582]
+}
+
+.outline-btn {
+    @apply font-bold text-xl border border-[#F7A582] rounded-md py-4 px-6 text-[#F7A582] transition-all duration-300 ease-in-out
+}
+
+.outline-btn:hover {
+    @apply bg-[#F7A582] text-white
+}
