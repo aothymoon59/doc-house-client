@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.file-input::file-selector-button {
+    background-color: #F7A582 !important;
+    color: #ffffff !important;
+    border: 0;
+}
