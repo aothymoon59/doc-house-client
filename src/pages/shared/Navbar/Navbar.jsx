@@ -5,9 +5,20 @@ import "./Navbar.css";
 import Container from "../../../components/Container/Container";
 import { BiMenuAltRight } from "react-icons/bi";
 import { SlClose } from "react-icons/sl";
+import useAuth from "../../../hooks/useAuth";
+import { FaSignOutAlt } from "react-icons/fa";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const { user, logOut } = useAuth()
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    };
 
     const navOptions = (
         <>
@@ -62,16 +73,49 @@ const Navbar = () => {
                     Contact Us
                 </NavLink>
             </li>
-            <li>
-                <NavLink
-                    to="/login"
-                    aria-label="login"
-                    title="login"
-                    className={({ isActive }) => (isActive ? "active" : "default")}
-                >
-                    Login
-                </NavLink>
-            </li>
+            {
+                !user ? <li>
+                    <NavLink
+                        to="/login"
+                        aria-label="login"
+                        title="login"
+                        className={({ isActive }) => (isActive ? "active" : "default")}
+                    >
+                        Login
+                    </NavLink>
+                </li> :
+                    <li>
+                        <div className="tooltip tooltip-left"
+                            data-tip={user?.displayName}
+                        >
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-8 lg:w-10 h-8 lg:h-10 rounded-full border">
+                                        <img
+                                            src={user?.photoURL}
+                                            alt={user?.displayName}
+                                            referrerPolicy="no-referrer"
+                                        />
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                                    <li>
+                                        <a className="justify-between">
+                                            Profile
+                                            <span className="badge">New</span>
+                                        </a>
+                                    </li>
+                                    <li><a>Settings</a></li>
+                                    <li>
+                                        <Link onClick={handleLogOut}>
+                                            Logout <FaSignOutAlt />
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+            }
         </>
     );
 
@@ -96,6 +140,34 @@ const Navbar = () => {
                         >
                             {navOptions}
                         </ul>
+                        {/* {
+                            user &&
+                            <div className="tooltip tooltip-left hidden md:block ml-5"
+                                data-tip={user?.displayName}
+                            >
+                                <div className="dropdown dropdown-end">
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-8 lg:w-10 h-8 lg:h-10 rounded-full border">
+                                            <img
+                                                src={user?.photoURL}
+                                                alt={user?.displayName}
+                                                referrerPolicy="no-referrer"
+                                            />
+                                        </div>
+                                    </label>
+                                    <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                                        <li>
+                                            <a className="justify-between">
+                                                Profile
+                                                <span className="badge">New</span>
+                                            </a>
+                                        </li>
+                                        <li><a>Settings</a></li>
+                                        <li><a>Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        } */}
                     </div>
                 </div>
             </Container>
