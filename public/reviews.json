@@ -1,0 +1,38 @@
+[
+  {
+    "image": "https://i.ibb.co/nz3vs18/c6.jpg",
+    "name": "John Smith",
+    "title": "CEO, XYZ Company",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id tincidunt felis. Quisque malesuada quam in massa sollicitudin, ac placerat quam vulputate."
+  },
+  {
+    "image": "https://i.ibb.co/p19wHJh/c5.jpg",
+    "name": "Jane Doe",
+    "title": "Marketing Manager, ABC Corp",
+    "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc fringilla libero vel tellus luctus, vel bibendum orci consectetur."
+  },
+  {
+    "image": "https://i.ibb.co/9g01Ttt/c4.png",
+    "name": "David Johnson",
+    "title": "Designer, Design Studio",
+    "description": "Vivamus malesuada ex ac mauris interdum, non rhoncus libero dictum. Sed euismod augue eget nulla viverra, id eleifend nisl malesuada."
+  },
+  {
+    "image": "https://i.ibb.co/DWvGpWD/c3.jpg",
+    "name": "Sarah Williams",
+    "title": "Sales Director, SalesPro Inc.",
+    "description": "Integer euismod, sapien ac auctor iaculis, dolor tortor bibendum odio, id efficitur arcu justo id erat. Fusce eget tristique lectus, eu sollicitudin lorem."
+  },
+  {
+    "image": "https://i.ibb.co/PYgDKcB/c1.png",
+    "name": "Michael Brown",
+    "title": "CTO, Tech Innovations",
+    "description": "Duis auctor, ipsum eget congue iaculis, urna ligula lacinia purus, nec tristique odio elit nec purus. Suspendisse potenti. Praesent vel odio ut felis vehicula egestas."
+  },
+  {
+    "image": "https://i.ibb.co/bvrZ1tV/c2.jpg",
+    "name": "Emily Wilson",
+    "title": "COO, Global Solutions",
+    "description": "Sed eget libero in odio auctor vulputate. Sed fermentum euismod libero, non tristique sapien tempus ut. Proin eget ligula vel nulla lobortis dictum."
+  }
+]
