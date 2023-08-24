@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
+import useAuth from '../../hooks/useAuth';
+import { ImSpinner9 } from "react-icons/im";
+import { toast } from 'react-hot-toast';
 
 const RegisterForm = () => {
     const [showPass, setShowPass] = useState(false);
-    // const { loading, setLoading, createUser, updateUserProfile } = useAuth();
+    const { loading, setLoading, createUser, updateUserProfile } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -20,65 +23,68 @@ const RegisterForm = () => {
     const onSubmit = (data) => {
         const { name, email, password } = data;
 
-        // // upload image
-        // const image = data.image[0];
-        // const formData = new FormData();
-        // formData.append("image", image);
-        // const url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KEY
-        //     }`;
+        // upload image
+        const image = data.image[0];
+        const formData = new FormData();
+        formData.append("image", image);
+        const url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KEY
+            }`;
 
-        // fetch(url, {
-        //     method: "POST",
-        //     body: formData,
-        // })
-        //     .then((res) => res.json())
-        //     .then((imgData) => {
-        //         const imgUrl = imgData.data.display_url;
+        fetch(url, {
+            method: "POST",
+            body: formData,
+        })
+            .then((res) => res.json())
+            .then((imgData) => {
+                const imgUrl = imgData.data.display_url;
 
-        //         createUser(email, password)
-        //             .then(() => {
-        //                 updateUserProfile(name, imgUrl)
-        //                     .then(() => {
-        //                         const savedUser = {
-        //                             name,
-        //                             email,
-        //                             image: imgUrl,
-        //                             role: "student",
-        //                         };
+                createUser(email, password)
+                    .then(() => {
+                        updateUserProfile(name, imgUrl)
+                            .then(() => {
+                                const savedUser = {
+                                    name,
+                                    email,
+                                    image: imgUrl,
+                                    role: "user",
+                                };
 
-        //                         fetch(`${import.meta.env.VITE_API_URL}/users`, {
-        //                             method: "POST",
-        //                             headers: {
-        //                                 "content-type": "application/json",
-        //                             },
-        //                             body: JSON.stringify(savedUser),
-        //                         })
-        //                             .then((res) => res.json())
-        //                             .then((data) => {
-        //                                 if (data.insertedId) {
-        //                                     reset();
-        //                                     toast.success("Successfully sign Up!");
-        //                                     setLoading(false);
-        //                                     navigate(from, { replace: true });
-        //                                 }
-        //                             });
-        //                     })
-        //                     .catch((err) => {
-        //                         console.log(err.message);
-        //                         toast.error(err.message);
-        //                         setLoading(false);
-        //                     });
-        //                 navigate(from, { replace: true });
-        //             })
-        //             .catch((err) => {
-        //                 console.log(err.message);
-        //                 toast.error(err.message);
-        //                 setLoading(false);
-        //             });
-        //     })
-        //     .catch((err) => {
-        //         console.log(err.message);
-        //     });
+                                fetch(`${import.meta.env.VITE_API_URL}/users`, {
+                                    method: "POST",
+                                    headers: {
+                                        "content-type": "application/json",
+                                    },
+                                    body: JSON.stringify(savedUser),
+                                })
+                                    .then((res) => res.json())
+                                    .then((data) => {
+                                        if (data.insertedId) {
+                                            reset();
+                                            toast.success("Successfully sign Up!");
+                                            setLoading(false);
+                                            navigate(from, { replace: true });
+                                        }
+                                    });
+                            })
+                            .catch((err) => {
+                                console.log(err.message);
+                                toast.error(err.message);
+                                setLoading(false);
+                            });
+                        setLoading(false);
+                        navigate(from, { replace: true });
+                    })
+                    .catch((err) => {
+                        console.log(err.message);
+                        toast.error(err.message);
+                        setLoading(false);
+                    });
+            })
+            .catch((err) => {
+                console.log(err.message);
+                toast.error(err.message);
+                setLoading(false);
+            });
     };
 
     return (
@@ -177,12 +183,11 @@ const RegisterForm = () => {
                         type="submit"
                         className="w-full common-btn"
                     >
-                        {/* {loading ? (
-                        <ImSpinner9 className="m-auto animate-spin" size={24} />
-                    ) : (
-                        "Create Account"
-                    )} */}
-                        Create Account
+                        {loading ? (
+                            <ImSpinner9 className="m-auto animate-spin" size={24} />
+                        ) : (
+                            "Create Account"
+                        )}
                     </button>
                     <p className="text-center mt-4 mb-6">
                         <small>

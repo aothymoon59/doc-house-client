@@ -17,6 +17,7 @@ const Navbar = () => {
                     aria-label="Home"
                     title="Home"
                     className={({ isActive }) => (isActive ? "active" : "default")}
+                    onClick={() => setOpen(!open)}
                 >
                     Home
                 </NavLink>
