@@ -8,10 +8,10 @@ import { toast } from 'react-hot-toast';
 
 const RegisterForm = () => {
     const [showPass, setShowPass] = useState(false);
-    const { loading, setLoading, createUser, updateUserProfile } = useAuth();
+    const { loading, setLoading, createUser, updateUserProfile, verificationEmail } = useAuth();
     const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
+    // const location = useLocation();
+    // const from = location.state?.from?.pathname || "/";
 
     const {
         register,
@@ -39,7 +39,11 @@ const RegisterForm = () => {
                 const imgUrl = imgData.data.display_url;
 
                 createUser(email, password)
-                    .then(() => {
+                    .then((res) => {
+                        verificationEmail(res.user)
+                            .then(result => {
+                                toast("Please verify your email address")
+                            })
                         updateUserProfile(name, imgUrl)
                             .then(() => {
                                 const savedUser = {
@@ -62,7 +66,7 @@ const RegisterForm = () => {
                                             reset();
                                             toast.success("Successfully sign Up!");
                                             setLoading(false);
-                                            navigate(from, { replace: true });
+                                            navigate("/login");
                                         }
                                     });
                             })
@@ -72,7 +76,7 @@ const RegisterForm = () => {
                                 setLoading(false);
                             });
                         setLoading(false);
-                        navigate(from, { replace: true });
+                        navigate("/login");
                     })
                     .catch((err) => {
                         console.log(err.message);
@@ -86,6 +90,8 @@ const RegisterForm = () => {
                 setLoading(false);
             });
     };
+
+
 
     return (
         <div className='w-full lg:w-[70%]'>

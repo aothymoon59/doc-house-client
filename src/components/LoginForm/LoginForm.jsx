@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
+import useAuth from '../../hooks/useAuth';
+import { ImSpinner9 } from 'react-icons/im';
+import { toast } from 'react-hot-toast';
 
 const LoginForm = () => {
     const [showPass, setShowPass] = useState(false);
-    // const { loading, setLoading, signIn } = useAuth();
+    const { loading, setLoading, signIn } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -20,20 +23,24 @@ const LoginForm = () => {
     const onSubmit = (data) => {
         const { email, password } = data;
 
-        console.log(data)
-
-        // signIn(email, password)
-        //     .then(() => {
-        //         reset();
-        //         toast.success("Successfully sign in!");
-        //         setLoading(false);
-        //         navigate(from, { replace: true });
-        //     })
-        //     .catch((err) => {
-        //         console.log(err.message);
-        //         toast.error(err.message);
-        //         setLoading(false);
-        //     });
+        signIn(email, password)
+            .then((result) => {
+                const loggedUser = result.user;
+                if (!loggedUser.emailVerified) {
+                    toast.error('You need to verify your email first')
+                    setLoading(false);
+                    return false;
+                }
+                reset();
+                toast.success("Successfully sign in!");
+                setLoading(false);
+                navigate(from, { replace: true });
+            })
+            .catch((err) => {
+                console.log(err.message);
+                toast.error(err.message);
+                setLoading(false);
+            });
     };
 
     return (
@@ -90,12 +97,12 @@ const LoginForm = () => {
                         type="submit"
                         className="w-full common-btn"
                     >
-                        {/* {loading ? (
-                        <ImSpinner9 className="m-auto animate-spin" size={24} />
-                    ) : (
-                        "Sign In"
-                    )} */}
-                        Sign In
+                        {loading ? (
+                            <ImSpinner9 className="m-auto animate-spin" size={24} />
+                        ) : (
+                            "Sign In"
+                        )}
+
                     </button>
                     <p className="text-center mt-4 mb-6">
                         <small>
