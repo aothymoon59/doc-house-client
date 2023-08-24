@@ -2,7 +2,7 @@ import React from 'react';
 
 const SingleContactDetails = ({ icon, title, desc, cardBg }) => {
     return (
-        <div className={`px-10 md:px-5 xl:px-[43px] py-10 md:py-5 xl:py-[50px] flex items-center gap-5 bg-[${cardBg}] rounded-[10px] text-white`}>
+        <div className={`px-10 md:px-5 xl:px-[43px] py-10 md:py-5 xl:py-[50px] flex items-center gap-5 rounded-[10px] text-white`} style={{ backgroundColor: `${cardBg}` }}>
             <div className='text-xl'>
                 {
                     icon

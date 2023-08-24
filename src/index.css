@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
 .file-input::file-selector-button {
     background-color: #F7A582 !important;
     color: #ffffff !important;
