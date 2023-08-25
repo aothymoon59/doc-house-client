@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import './Testimonials.css'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -41,7 +40,7 @@ const Testimonials = () => {
                     loop={true}
                     modules={[Autoplay, Navigation]}
                     autoplay={{
-                        delay: 5000,
+                        delay: 6000,
                         disableOnInteraction: false,
                     }}
                     className="mySwiper"

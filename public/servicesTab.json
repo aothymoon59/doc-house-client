@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "1",
+    "image": "https://i.ibb.co/D8Grw0C/Gastrology-sm.png",
+    "category": "Gastrology",
+    "name": "Gastrology"
+  },
+  {
+    "_id": "2",
+    "image": "https://i.ibb.co/J52rCt0/Orthopedic-sm.png",
+    "category": "Orthopedic",
+    "name": "Orthopedic"
+  },
+  {
+    "_id": "3",
+    "image": "https://i.ibb.co/C0v799w/Gynecology-sm.png",
+    "category": "Gynecology",
+    "name": "Gynecology"
+  },
+  {
+    "_id": "4",
+    "image": "https://i.ibb.co/LNfz23h/Neorology-sm.png",
+    "category": "Neorology",
+    "name": "Neorology"
+  },
+  {
+    "_id": "5",
+    "image": "https://i.ibb.co/vDf9fBM/Dental-sm.png",
+    "category": "Dental",
+    "name": "Dental Care"
+  },
+  {
+    "_id": "6",
+    "image": "https://i.ibb.co/nDP4bM5/Cosmetic-Surgery-sm.png",
+    "category": "Surgery",
+    "name": "Cosmetic Surgery"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Electro Gastrointestinal Therapy",
+    "image": "https://i.ibb.co/j48CxVY/Gastrology.png",
+    "desc1": "Our Electro Gastrointestinal Therapy offers cutting-edge solutions for digestive health, utilizing advanced technology to provide relief from gastrointestinal disorders.",
+    "desc2": "Our team of experts is dedicated to improving your digestive well-being, ensuring you enjoy a life free from discomfort and pain.",
+    "category": "Gastrology"
+  },
+  {
+    "title": "Advanced Orthopedic Procedures",
+    "image": "https://i.ibb.co/J397Vdw/Orthopedic.jpg",
+    "desc1": "Experience a life without joint pain. Our Advanced Orthopedic Procedures use the latest techniques to restore mobility and enhance your quality of life.",
+    "desc2": "Our skilled orthopedic specialists are committed to helping you regain your active lifestyle.",
+    "category": "Orthopedic"
+  },
+  {
+    "title": "Comprehensive Gynecological Care",
+    "image": "https://i.ibb.co/dfGBxHd/Gynecology.jpg",
+    "desc1": "We provide Comprehensive Gynecological Care tailored to your unique needs, ensuring your reproductive health is in the best hands.",
+    "desc2": "Our compassionate team of gynecologists is dedicated to your well-being at every stage of life.",
+    "category": "Gynecology"
+  },
+  {
+    "title": "Innovative Neurological Treatments",
+    "image": "https://i.ibb.co/Nm4nFq0/Neorology.jpg",
+    "desc1": "Discover Innovative Neurological Treatments that can transform your life. Our neurology experts are pioneers in delivering advanced care for neurological conditions.",
+    "desc2": "We are here to help you regain control and live a fulfilling life despite neurological challenges.",
+    "category": "Neorology"
+  },
+  {
+    "title": "Comprehensive Dental Care Services",
+    "image": "https://i.ibb.co/4jNHjYh/Dental.png",
+    "desc1": "Experience Comprehensive Dental Care Services that prioritize your oral health and overall well-being. We offer a wide range of dental treatments to keep your smile radiant.",
+    "desc2": "Our dedicated dental team is committed to providing you with personalized, top-quality care.",
+    "category": "Dental"
+  },
+  {
+    "title": "Advanced Cosmetic Surgery Procedures",
+    "image": "https://i.ibb.co/4JdCjvR/Cosmetic-Surgery.jpg",
+    "desc1": "Enhance your natural beauty with our Advanced Cosmetic Surgery Procedures. Our experienced surgeons deliver stunning results with a focus on safety and excellence.",
+    "desc2": "We are dedicated to helping you achieve the look you desire while prioritizing your health and well-being.",
+    "category": "Surgery"
+  }
+]
