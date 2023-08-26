@@ -2,7 +2,7 @@ import { FiClock } from "react-icons/fi";
 import { LuMapPin } from "react-icons/lu";
 import { SlCallOut } from "react-icons/sl";
 import Container from "../../../components/Container/Container";
-import SingleContactDetails from "./SingleContactDetails";
+import SingleContactDetails from "../../../components/SingleContactDetails/SingleContactDetails";
 
 const ContactDetails = () => {
     return (

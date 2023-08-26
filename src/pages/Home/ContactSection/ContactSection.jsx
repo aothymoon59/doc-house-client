@@ -15,7 +15,7 @@ const ContactSection = () => {
                         </div>
                         <div className="text-white">
                             <p className="flex items-center gap-2 mb-6"><SlCallOut /> +88 01750 14 14 14</p>
-                            <p className="flex items-center gap-2"><LuMapPin /> +Dhanmondi, Dhaka, Bangladesh</p>
+                            <p className="flex items-center gap-2"><LuMapPin /> Dhanmondi, Dhaka, Bangladesh</p>
                         </div>
                     </div>
                     <div className="w-full md:w-[60%]">
