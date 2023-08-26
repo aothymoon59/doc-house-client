@@ -83,7 +83,7 @@ const ContactForm = () => {
                         )}
                     </div>
                     <div className="form-control md:w-1/2">
-                        <select {...register("time", { required: true })} className="select bg-[#ffffff0d] w-full rounded-[10px] text-white">
+                        <select {...register("time", { required: true })} className="w-full p-[22px] bg-[#ffffff0d] rounded-[10px] text-white custom-select">
                             <option value=''>Time</option>
                             <option value="10:00 AM">10:00 AM</option>
                             <option value="11:00 AM">11:00 AM</option>

@@ -4,10 +4,10 @@ input::placeholder {
 }
 
 .custom-input {
-    @apply input input-bordered w-full p-5 bg-[#ffffff0d] rounded-[10px] text-white
+    @apply w-full p-5 bg-[#ffffff0d] rounded-[10px] text-white
 }
 
-.select option {
+.custom-select option {
     background-color: #ffffff0d;
     /* Change this to your desired background color */
     color: #000;
