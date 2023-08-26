@@ -6,7 +6,7 @@ import footerLogo from '../../../assets/footer-logo.png'
 const Footer = () => {
     return (
         <div
-            className={`w-full pt-10 md:pt-20`}
+            className={`w-full pt-10 md:pt-20 bg-[#F3F3F3] mt-8 md:mt-[130px]`}
         >
             <Container>
                 <footer className="footer">

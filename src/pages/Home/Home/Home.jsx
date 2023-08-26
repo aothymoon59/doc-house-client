@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import ContactDetails from "../ContactDetails/ContactDetails";
+import ContactSection from "../ContactSection/ContactSection";
 import OurServices from "../OurServices/OurServices";
 import Testimonials from "../Testimonials/Testimonials";
 
@@ -10,6 +11,7 @@ const Home = () => {
             <OurServices />
             <ContactDetails />
             <Testimonials />
+            <ContactSection />
         </div>
     );
 };
