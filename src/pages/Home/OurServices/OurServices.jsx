@@ -26,6 +26,9 @@ const OurServices = () => {
         setActiveTab(tabName);
     };
 
+
+    const { image, title, desc1, desc2 } = service || []
+
     return (
         <section className="pt-8 md:pt-[130px]">
             <Container>
@@ -61,12 +64,12 @@ const OurServices = () => {
                     </div>
                     <div className="flex flex-col md:flex-row gap-6 mt-[50px]">
                         <div className="md:w-1/2">
-                            <img src={service?.image} className="rounded-[10px] w-full" alt={service?.title} />
+                            <img src={image} className="rounded-[10px] w-full" alt={title} />
                         </div>
                         <div className="md:w-1/2">
-                            <h2 className="text-2xl sm:text-[30px] text-[#0A0808] font-bold mb-5 text-center md:text-left">{service?.title}</h2>
-                            <p className="text-[#3B3A3A] mb-[10px]">{service?.desc1}</p>
-                            <p className="text-[#3B3A3A] mb-5">{service?.desc2}</p>
+                            <h2 className="text-2xl sm:text-[30px] text-[#0A0808] font-bold mb-5 text-center md:text-left">{title}</h2>
+                            <p className="text-[#3B3A3A] mb-[10px]">{desc1}</p>
+                            <p className="text-[#3B3A3A] mb-5">{desc2}</p>
                             <div className="text-center md:text-left">
                                 <button className="outline-btn">More Details</button>
                             </div>

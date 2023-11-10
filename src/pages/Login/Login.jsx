@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import loginImage from '../../assets/login-register.png'
 import LoginForm from '../../components/LoginForm/LoginForm';
 

@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import './ContactForm.css'
-
+// This is contact form using react hook form 
 const ContactForm = () => {
     const {
         register,
@@ -78,7 +78,7 @@ const ContactForm = () => {
                             name="date"
                             className="custom-input"
                         />
-                        {errors.email && (
+                        {errors.date && (
                             <span className="text-red-600 mt-2">Date is required</span>
                         )}
                     </div>

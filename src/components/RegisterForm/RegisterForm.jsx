@@ -23,6 +23,8 @@ const RegisterForm = () => {
     const onSubmit = (data) => {
         const { name, email, password } = data;
 
+        console.log(data.image[0])
+
         // upload image
         const image = data.image[0];
         const formData = new FormData();
