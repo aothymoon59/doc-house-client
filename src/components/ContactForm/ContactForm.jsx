@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import './ContactForm.css'
-// This is contact form using react hook form 
+
 const ContactForm = () => {
     const {
         register,
