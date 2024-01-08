@@ -98,9 +98,7 @@ const ContactForm = () => {
                         </select>
                     </div>
                 </div>
-
                 <button type='submit' className="common-btn w-full">Book Now</button>
-
             </form>
         </div>
     );

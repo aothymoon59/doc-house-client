@@ -13,7 +13,7 @@ const Banner = () => {
                         <button className="common-btn">All Service</button>
                     </div>
                     <div className="md:w-[50%]">
-                        <img src={bannerImg} className="mx-auto md:ml-auto w-[65%] md:w-[90%]" alt="Banner image" />
+                        <img src={bannerImg} className="mx-auto md:ml-auto w-[65%] md:w-[90%]" alt="Doc Banner image" />
                     </div>
                 </div>
             </Container>
